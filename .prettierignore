@@ -38,3 +38,6 @@ next-env.d.ts
 
 # ts compile
 lib/dist
+
+# pnpm
+pnpm-lock.yaml

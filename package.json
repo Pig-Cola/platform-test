@@ -6,12 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tscompile": "tsc -p lib/tsconfig.json",
+    "tscompile-w": "tsc -p lib/tsconfig.json --watch",
+    "format-fix": "pnpm prettier . -w",
+    "lint:space": "eslint --rule \"space-in-parens: [2, always]\" --ignore-path \".gitignore\" .",
+    "lint:space-fix": "pnpm lint:space --fix",
+    "format-lint": "pnpm format-fix && pnpm lint:space-fix"
   },
   "dependencies": {
     "next": "12.3.1",
+    "next-auth": "^4.12.2",
+    "prettier": "^2.7.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sass": "^1.55.0"
   },
   "devDependencies": {
     "@types/node": "18.8.2",
