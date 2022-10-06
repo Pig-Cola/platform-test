@@ -52,12 +52,16 @@ const options: NextAuthOptions = {
     maxAge: 60 * 60 * 3, // 3H
   },
 
+  jwt: {
+    maxAge: 60 * 60 * 6, // 6H
+  },
+
   callbacks: {
-    async session( {session, token} ) {
+    async session( { session, token } ) {
       if ( token ) {
         session.user = { ...token.user }
         session.sub2 = {
-          hi: 'hello2'
+          hi: 'hello2',
         }
       }
       return session

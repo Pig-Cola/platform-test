@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  basePath: '/gpst-smc'
+  basePath: '/gpst-smc',
 }
 
 module.exports = nextConfig
