@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       {session && (
         <div>
           <p
-          className={style.clickable}
+            className={style.clickable}
             onClick={() => {
               signOut()
             }}
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
       )}
       {!session && (
         <p
-        className={style.clickable}
+          className={style.clickable}
           onClick={() => {
             signIn()
           }}

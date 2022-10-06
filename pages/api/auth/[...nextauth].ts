@@ -34,17 +34,17 @@ const options: NextAuthOptions = {
   secret: NEXTAUTH_SECRET,
 
   providers: [
-    CredentialsProvider({
+    CredentialsProvider( {
       name: '커스텀로그인',
       id: 'local',
       credentials: {
         id: { label: 'id', type: 'text' },
         password: { label: 'password', type: 'password' },
       },
-      async authorize(credentials, req) {
+      async authorize( credentials, req ) {
         return null
       },
-    }),
+    } ),
   ],
 
   session: {
@@ -52,9 +52,13 @@ const options: NextAuthOptions = {
     maxAge: 60 * 60 * 3, // 3H
   },
 
+  jwt: {
+    maxAge: 60 * 60 * 6, // 6H
+  },
+
   callbacks: {
-    async session({ session, token }) {
-      if (token) {
+    async session( { session, token } ) {
+      if ( token ) {
         session.user = { ...token.user }
         session.sub1 = {
           hi: 'hello1',
@@ -65,4 +69,4 @@ const options: NextAuthOptions = {
   },
 }
 
-export default nextAuth(options)
+export default nextAuth( options )
